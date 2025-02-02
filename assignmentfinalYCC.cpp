@@ -2,11 +2,11 @@
 #include <string>
 using namespace std;
 
-//Elements
+//Variables
 double money = 1000.0; 
 int correctPin = 1234;   
 
-
+//Function store Menu 
 void displayMenu() {
     cout << "\t=========================================\t\n";
     cout << "\t=========================================\t";
@@ -64,6 +64,7 @@ void changePin() {
 }
 
 int main() {
+    //Variables
     int choice;
     int enteredPIN;
     int attempts = 3; 
@@ -77,18 +78,19 @@ int main() {
 
         
         if (authenticate(enteredPIN)) {
-            break; 
-        } else {
+            break;
+        }
+         else {
             attempts--;
             if (attempts > 0) {
-                cout << "\n\tIncorrect PIN. Please try again.\n";
-            } else {
+              cout << "\n\tIncorrect PIN. Please try again.\n";
+            }
+             else {
                 cout << "\n\t=========================================\t";
                 cout << "\n\tIncorrect PIN. No attempts remaining. Exiting...\n";
                 return 0; 
             }
-            break;
-        }
+         }
     }
 
    //while loop
@@ -129,7 +131,8 @@ int main() {
                 if (amount <= 0) {
                     cout << "\n\t=========================================\t";
                     cout << "\n\tInvalid amount!\n";
-                } else {
+                } 
+                else {
                     money += amount;
                     cout << "\n\t=========================================\t";
                     cout << "\n\tDeposit successful. New balance: $" << money << "\n";
